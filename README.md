@@ -3,6 +3,12 @@
  * Will be updated as new projects are made
  
  # FastAPI
+ [Here](https://github.com/DavidKentShirley/Python-Projects/tree/main/Python-FastAPI-Basic1)
+ 
+### About
+<details><summary>Overview</summary>
+
+ # FastAPI
  1. [Basic Knowledge](https://github.com/DavidKentShirley/Python-Projects/tree/main/Python-FastAPI-Basic1/Books_example(Basic%20Fastapi%20Info)): Some basic API functionality using a pre-made object to work with based off books. Complete RESTful API
  * CRUD model requests (get, post, put, delete)
  * Basic Data models
@@ -19,10 +25,10 @@
  1. Full Stack application [Will be added soon]
  2. Web Deployment [Will be added soon]
  
- # Gender Classification 2.0
- Updated version of my original ML project on Gender Classification (Male Vs Female) 
- * Includes all images used for the project (dataset)
- * ipynb with code
+</details>
+
+# Gender Classification 2.0
+[Here](https://github.com/DavidKentShirley/Python-Projects/tree/main/Gender%20Classification%202.0)
 
 ### About
 <details><summary>Overview</summary>
