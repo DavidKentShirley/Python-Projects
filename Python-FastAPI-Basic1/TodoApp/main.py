@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from database import engine
-from routers import auth, todos, admin, users
+from routers import auth, todos, admin, users, address
 
 import models
 
@@ -12,4 +12,5 @@ app.include_router(auth.router) # Adds the routers to this file [EX: auth.py]
 app.include_router(todos.router) # Adds the routers to this file
 app.include_router(admin.router)
 app.include_router(users.router)
+app.include_router(address.router)
 

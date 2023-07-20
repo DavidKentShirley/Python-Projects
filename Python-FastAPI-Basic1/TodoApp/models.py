@@ -1,4 +1,5 @@
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
 from database import Base
 
 # Database model: Used to create/define tables in the database
@@ -12,7 +13,12 @@ class Users(Base):
     last_name = Column(String)
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
+    phone_number = Column(String)
+    address_id = Column(Integer, ForeignKey("address.id"), nullable=True)
     role = Column(String)
+
+    todos = relationship("Todos", back_populates="owner")
+    address = relationship("Address", back_populates="user_address")
 
 # Database model: Used to create/define tables in the database
 class Todos(Base):
@@ -26,6 +32,18 @@ class Todos(Base):
     complete = Column(Boolean, default=False)
     owner_id = Column(Integer, ForeignKey("users.id"))
 
+    owner = relationship("Users", back_populates="todos")
 
+class Address(Base):
+    __tablename__ = 'address'
 
+    id = Column(Integer, primary_key=True, index=True)
+    address1 = Column(String)
+    address2 = Column(String)
+    city = Column(String)
+    state = Column(String)
+    country = Column(String)
+    zipcode = Column(String)
+    
+    user_address = relationship("Users", back_populates="address")
 
