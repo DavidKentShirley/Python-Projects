@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from typing import Annotated
+from typing import Annotated, Optional
 from starlette import status
 from fastapi import APIRouter, Depends, HTTPException
 from passlib.context import CryptContext  # pip install "passlib[bcrypt]"
@@ -29,6 +29,7 @@ class CreateUserRequest(BaseModel):
     first_name: str
     last_name: str
     password: str
+    phone_number: Optional[str]
     role: str
 
 # Used to create JWT
@@ -81,6 +82,7 @@ async def create_user(db: db_dependency, create_user_request: CreateUserRequest)
         email = create_user_request.email,
         first_name = create_user_request.first_name,
         last_name = create_user_request.last_name,
+        phone_number = create_user_request.phone_number,
         role = create_user_request.role,
         hashed_password = bcrypt_context.hash(create_user_request.password),
         is_active = True
