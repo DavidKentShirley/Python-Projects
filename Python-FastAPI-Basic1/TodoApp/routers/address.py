@@ -1,6 +1,3 @@
-import sys
-sys.path.append("..")
-
 from typing import Optional
 from fastapi import Depends, APIRouter, HTTPException
 import models
@@ -10,10 +7,14 @@ from pydantic import BaseModel
 from .auth import get_current_user
 from starlette import status
 
+import sys
+sys.path.append("..")
+
 router = APIRouter(
-    prefix='/address', # all endpoints will start with /auth
-    tags=['address'] # Helps seperate docs in swagger all auth endpoints will be seperate from other endpoints
+    prefix='/address',  # all endpoints will start with /auth
+    tags=['address']  # Helps seperate docs in swagger all auth endpoints will be seperate from other endpoints
 )
+
 
 def get_db():
     db = SessionLocal()
@@ -21,6 +22,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
 
 class Address(BaseModel):
     address1: str
@@ -51,3 +53,4 @@ async def create_address(address: Address, user: dict = Depends(get_current_user
     user_model.address_id = address_model.id
     db.add(user_model)
     db.commit()
+    

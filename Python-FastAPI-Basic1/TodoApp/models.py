@@ -2,6 +2,7 @@ from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 from database import Base
 
+
 # Database model: Used to create/define tables in the database
 class Users(Base):
     __tablename__ = 'users' # Names the table in DB

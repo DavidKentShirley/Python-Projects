@@ -10,9 +10,10 @@ from .auth import get_current_user
 import models
 
 router = APIRouter(
-    prefix='/admin', # all endpoints will start with /auth
-    tags=['admin'] # Helps seperate docs in swagger all auth endpoints will be seperate from other endpoints
+    prefix='/admin',  # all endpoints will start with /auth
+    tags=['admin']  # Helps seperate docs in swagger all auth endpoints will be seperate from other endpoints
 )
+
 
 def get_db():
     db = SessionLocal()
@@ -32,6 +33,7 @@ async def read_all(user: user_dependecy, db: db_dependency):
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail='Authenication Failed')
     return db.query(models.Todos).all()
 
+
 @router.delete("/todo/{todo_id}", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_todo(user: user_dependecy, db: db_dependency, todo_id: int = Path(gt=0)):
     if user is None or user.get('user_role') != 'admin':
@@ -42,3 +44,4 @@ async def delete_todo(user: user_dependecy, db: db_dependency, todo_id: int = Pa
     db.query(models.Todos).filter(models.Todos.id == todo_id).delete()
 
     db.commit()
+    
