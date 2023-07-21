@@ -15,14 +15,14 @@
  * Response schema
  * Data validation + Path parameters
  2. [To do App](https://github.com/DavidKentShirley/Python-Projects/tree/main/Python-FastAPI-Basic1/TodoApp): Project to use more advanced features of FastAPI [WIP]
- * Implementing databases with SQLite and PostgressSQL (Local database and production database) [WIP]
+ * Implementing databases with SQLite and PostgressSQL (Local database and production database) 
  * Using sqlalchemy to implement databases within FastAPI  
- * Authentication and Authorization [WIP]
- * Request Authentication [WIP]
- * Data Migration [WIP]
+ * Authentication and Authorization 
+ * Request Authentication 
+ * Data Migration 
  
  ### Future Plans
- 1. Full Stack application [Will be added soon]
+ 1. Full Stack application [WIP]
  2. Web Deployment [Will be added soon]
  
 </details>
