@@ -109,22 +109,5 @@ After we see this model we can than check the output of the model to see what it
 We can see what the model predicted with the probability for each class. 
 
 
-
-## The Future
-
-•The next step to this model would be adding age detection.
-
-​		•Having a model to be able to predict gender and age would benefit even more than just gender.
-
-
-
-•Using a deep learning model would help increase the score significantly 
-
-​		•Having a deep learning model would help the model learn on its own what each gender is using more complicated algorithms which would increase the model score by a good amount
-</details>
-
- 
- # PySpark
- ### Will be added soon
  
  
